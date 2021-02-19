@@ -6,10 +6,10 @@ public class PostImpl implements Post
 {
     // metadati
     private int id;
-    private String author;
+    private User author;
     private String text;
     private Date datatime;
-    private List<User> likes;
+    private List<String> likes;
 
     // univocità del post
     private static int id_counter = 0;
@@ -25,17 +25,16 @@ public class PostImpl implements Post
         this.id = id_counter;
         id_counter += 1;
 
-        this.author = author;
+        this.author = new UserImpl(author);
         this.text = text;
-        this.likes = new Vector<User>();
+        this.likes = new Vector<String>();
         this.datatime = new Date();
     }
 
     // metodi
     public int GetID() { return id; }
-    public String GetAuthor() { return author; }
+    public User GetAuthor() { return author; }
     public String GetText() { return text; }
     public Date GetDataTime() { return datatime; }
-    public List<User> GetLikes() { return likes; }
-
+    public List<String> GetLikes() { return likes; }
 }

@@ -5,11 +5,11 @@ public interface Post
 {
     public int GetID();
     
-    public String GetAuthor();
+    public User GetAuthor();
 
     public String GetText();
 
     public Date GetDataTime();
 
-    public List<User> GetLikes();
+    public List<String> GetLikes();
 }

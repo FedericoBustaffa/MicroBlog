@@ -2,6 +2,7 @@ import java.util.List;
 
 public class MicroBlog
 {
+    // caratteristiche post
     private static void DisplayPost(Post p)
     {
         System.out.println("ID: " + p.GetID());
@@ -9,12 +10,13 @@ public class MicroBlog
         System.out.println("\tText: " + p.GetText());
         System.out.println("\tDataTime: " + p.GetDataTime());
         
-        List<User> likes = p.GetLikes();
+        List<String> likes = p.GetLikes();
         System.out.println("\tLikes: " + likes.size());
-        for(User u : likes)
-            System.out.println("\t\t" + u.GetUsername());
+        for(String u : likes)
+            System.out.println("\t\t" + u);
     }
 
+    // caratteristiche utente
     private static void DisplayUser(User u)
     {
         System.out.println("Username: " + u.GetUsername());
@@ -22,10 +24,15 @@ public class MicroBlog
 
     public static void main(String[] args)
     {
-        Post p = new PostImpl("Federico", "Primo post");
-        DisplayPost(p);
-
-        User u = new UserImpl("Federico");
-        DisplayUser(u);
+        SocialNetwork facebook = new SocialNetworkImpl();
+        User u1 = new UserImpl("Federico");
+        User u2 = new UserImpl("Giovanni");
+        facebook.AddUser(u1);
+        facebook.AddUser(u2);
+        
+        Post p1 = new PostImpl("Federico", "Primo post");
+        facebook.AddPost(u1, p1);
+        facebook.AddLike(u2, p1);
+        
     }
 }
