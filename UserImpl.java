@@ -5,33 +5,38 @@ public class UserImpl implements User
 {
     // metadati
     private String username;
-    private List<String> followed;
+    private Set<User> followed;
+    private Set<User> followers;
     private List<Post> post_list;
 
     // costruttore
     public UserImpl(String username)
     {
         this.username = username;
-        this.followed = new Vector<String>();
+        this.followed = new HashSet<User>();
+        this.followers = new HashSet<User>();
+        this.post_list = new Vector<Post>();
     }
 
-    // metodi
+    // metodi get
     public String GetUsername() { return username; }
 
-    public List<String> GetFollowed() { return followed; }
+    public Set<User> GetFollowed() { return followed; }
 
+    public Set<User> GetFollowers() { return followers; }
+
+    public List<Post> GetPostList() { return post_list; }
+
+    // altri metodi
     public void AddLike(Post p)
     {
-        
     }
 
     public void AddPost(Post p)
     {
-        post_list.add(p);
     }
 
     public void Follow(User u)
     {
-        followed.add(u.GetUsername());
     }
 }

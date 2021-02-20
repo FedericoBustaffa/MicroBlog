@@ -1,6 +1,6 @@
 import java.util.Date;
-import java.util.List;
-import java.util.Vector;
+import java.util.Set;
+import java.util.HashSet;
 
 public class PostImpl implements Post
 {
@@ -9,7 +9,7 @@ public class PostImpl implements Post
     private User author;
     private String text;
     private Date datatime;
-    private List<String> likes;
+    private Set<User> likes;
 
     // univocità del post
     private static int id_counter = 0;
@@ -27,8 +27,8 @@ public class PostImpl implements Post
 
         this.author = new UserImpl(author);
         this.text = text;
-        this.likes = new Vector<String>();
         this.datatime = new Date();
+        this.likes = new HashSet<User>();
     }
 
     // metodi
@@ -36,5 +36,5 @@ public class PostImpl implements Post
     public User GetAuthor() { return author; }
     public String GetText() { return text; }
     public Date GetDataTime() { return datatime; }
-    public List<String> GetLikes() { return likes; }
+    public Set<User> GetLikes() { return likes; }
 }

@@ -1,5 +1,5 @@
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 public interface Post
 {
@@ -11,5 +11,5 @@ public interface Post
 
     public Date GetDataTime();
 
-    public List<String> GetLikes();
+    public Set<User> GetLikes();
 }
