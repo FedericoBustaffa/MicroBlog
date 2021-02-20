@@ -7,5 +7,6 @@ public class MicroBlog
         sn.AddUser("Federico");
         sn.AddUser("Giovanni");
         sn.AddPost("Federico", "Ciao sono Federico");
+        sn.AddLike("")
     }
 }
