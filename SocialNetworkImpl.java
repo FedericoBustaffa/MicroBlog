@@ -25,6 +25,8 @@ public class SocialNetworkImpl implements SocialNetwork
     
     public Map<String, User> GetUserList() { return user_list; }
 
+    public User GetUser(String username) { return user_list.get(username); }
+
     public List<Post> GetPostList() { return post_list; }
     
     // altri metodi

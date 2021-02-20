@@ -9,6 +9,8 @@ public interface SocialNetwork
 
     public Map<String, User> GetUserList();
 
+    public User GetUser(String username);
+
     public List<Post> GetPostList();
 
     // altri metodi
