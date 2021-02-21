@@ -6,11 +6,11 @@ public interface User
     // metodi get
     public String GetUsername();
 
-    public Set<User> GetFollowed();
+    public Set<String> GetFollowed();
 
-    public Set<User> GetFollowers();
+    public Set<String> GetFollowers();
 
-    public List<Post> GetPostList();
+    public List<Integer> GetPostList();
 
     // altri metodi
     public void AddLike(Post p);

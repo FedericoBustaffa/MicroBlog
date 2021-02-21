@@ -1,5 +1,4 @@
 import java.util.Set;
-import java.util.List;
 import java.util.Map;
 
 public interface SocialNetwork
@@ -9,9 +8,7 @@ public interface SocialNetwork
 
     public Map<String, User> GetUserList();
 
-    public User GetUser(String username);
-
-    public List<Post> GetPostList();
+    public Map<Integer, Post> GetPostList();
 
     // altri metodi
     public void AddUser(String username);

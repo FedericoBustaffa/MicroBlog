@@ -6,10 +6,10 @@ public class PostImpl implements Post
 {
     // metadati
     private int id;
-    private User author;
+    private String author;
     private String text;
     private Date datatime;
-    private Set<User> likes;
+    private Set<String> likes;
 
     // univocità del post
     private static int id_counter = 0;
@@ -17,24 +17,18 @@ public class PostImpl implements Post
     // costruttore
     public PostImpl(String author, String text)
     {
-        // controllo che l'autore sia nella rete sociale
-        // controllo che il testo sia al massimo di 140 caratteri
-        if(text.length() > 140)
-            throw new IllegalArgumentException();
-        
         this.id = id_counter;
         id_counter += 1;
-
-        this.author = new UserImpl(author);
+        this.author = author;
         this.text = text;
         this.datatime = new Date();
-        this.likes = new HashSet<User>();
+        this.likes = new HashSet<String>();
     }
 
     // metodi
     public int GetID() { return id; }
-    public User GetAuthor() { return author; }
+    public String GetAuthor() { return author; }
     public String GetText() { return text; }
     public Date GetDataTime() { return datatime; }
-    public Set<User> GetLikes() { return likes; }
+    public Set<String> GetLikes() { return likes; }
 }
