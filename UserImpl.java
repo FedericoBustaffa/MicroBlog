@@ -1,5 +1,7 @@
 import java.util.List;
 import java.util.Vector;
+import java.util.Set;
+import java.util.HashSet;
 
 public class UserImpl implements User
 {
